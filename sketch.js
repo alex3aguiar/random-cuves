@@ -23,6 +23,7 @@ function draw() {
 function randonAngleCube(){
   alfa = random(360);
   beta = random(360);
+  console.log(alfa,beta)
 }
 
 function randonSizeCube(){
