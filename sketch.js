@@ -1,18 +1,11 @@
 function setup() {
-  createCanvas(400, 400, WEBGL);
-  button0 = createButton('angulo');
-  button0.position(0, 0);
-  button0.mousePressed(randonAngleCube);
-  
-  button1 = createButton('proporção');
-  button1.position(50, 0);
-  button1.mousePressed(randonSizeCube);
-  
-  button1 = createButton('tudo randon');
-  button1.position(150, 0);
-  button1.mousePressed(tudoRandom);
+  const cnv = createCanvas(400, 400, WEBGL);
+  resizeCanvas(windowWidth, windowHeight);
+  cnv.mouseClicked(tudoRandom);
 }
-
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 let alfa = 0;
 let beta = 0;
 
@@ -28,15 +21,16 @@ function draw() {
 }
 
 function randonAngleCube(){
-  
   alfa = random(360);
   beta = random(360);
 }
 
 function randonSizeCube(){
-  x = random(50,200);
-  y = random(50,200);
-  z = random(50,200);
+    tamanhoMaximo = windowWidth < windowHeight? windowWidth : windowHeight;
+  console.log(tamanhoMaximo)
+  x = random(tamanhoMaximo*0.1,tamanhoMaximo*0.5);
+  y = random(tamanhoMaximo*0.1,tamanhoMaximo*0.5);
+  z = random(tamanhoMaximo*0.1,tamanhoMaximo*0.5);
 }
 
 function tudoRandom(){
