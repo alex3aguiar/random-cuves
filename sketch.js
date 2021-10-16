@@ -6,7 +6,7 @@ function setup() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
-let alfa = 0;
+let alfa = 33;
 let beta = 0;
 
 let x = 100;
