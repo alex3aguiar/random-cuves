@@ -28,6 +28,9 @@ function randonAngleCube(){
 
 function randonSizeCube(){
     tamanhoMaximo = windowWidth < windowHeight? windowWidth : windowHeight;
+  if(tamanhoMaximo > 900){
+  tamanhoMaximo = 900;
+  }
   console.log(tamanhoMaximo)
   x = random(tamanhoMaximo*0.1,tamanhoMaximo*0.8);
   y = random(tamanhoMaximo*0.1,tamanhoMaximo*0.8);
