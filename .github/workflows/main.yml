@@ -1,4 +1,8 @@
  - name: Declare some variables
+   on:
+    push:main
+      branches:
+        - master
     id: vars
     shell: bash
     run: |
