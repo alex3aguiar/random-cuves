@@ -1,8 +1,8 @@
  - name: Declare some variables
    on:
-    push:main
+    push:
       branches:
-        - master
+        - main
     id: vars
     shell: bash
     run: |
