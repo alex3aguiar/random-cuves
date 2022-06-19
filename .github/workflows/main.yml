@@ -4,8 +4,11 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: |
-          echo "sdsdds: ${{ github.head_ref }}.${{ github.sha }}"
-          asdasdasadasd
-
+      - uses: actions/checkout@v3
+      - name: Setup Node 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+      - run: npm ci
+      - run: npm test
